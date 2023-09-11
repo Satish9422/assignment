@@ -11,11 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v2
 
       - name: Set up SSH
-        uses: webfactory/ssh-agent@v0.5
+        uses: webfactory/ssh-agent
         with:
           ssh-private-key: ${{ secrets.ec2_private_key }}
 
