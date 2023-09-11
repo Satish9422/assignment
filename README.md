@@ -11,8 +11,8 @@ Step 2: Install nginx, php, mysql on VPS.
 
 Step 3: Configure php-fpm
 
-       	nano /etc/php/8.1/fpm/php.ini	
-       	cgi.fix_pathinfo=0
+	nano /etc/php/8.1/fpm/php.ini	
+	cgi.fix_pathinfo=0
 	upload_max_filesize = 200M
 	post_max_size = 200M
 	memory_limit = 256M
