@@ -13,9 +13,9 @@ Step 3: Configure php-fpm
 
        	nano /etc/php/8.1/fpm/php.ini	
        	cgi.fix_pathinfo=0
-	upload_max_filesize = 128M
-	post_max_size = 128M
-	memory_limit = 512M
+	upload_max_filesize = 200M
+	post_max_size = 200M
+	memory_limit = 256M
 	max_execution_time = 120   
 
 Step 4:	Configure Database	
