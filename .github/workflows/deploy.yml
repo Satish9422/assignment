@@ -23,7 +23,7 @@ jobs:
           eval "$(ssh-agent -s)"
           ssh-add ~/.ssh/id_rsa
         
-          # uses: webfactory/ssh-agent
+        # uses: webfactory/ssh-agent
         # with:
         #   ssh-private-key: ${{ secrets.ec2_private_key }}
 
