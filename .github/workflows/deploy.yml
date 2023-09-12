@@ -23,10 +23,6 @@ jobs:
           eval "$(ssh-agent -s)"
           ssh-add ~/.ssh/id_rsa
 
-        # uses: webfactory/ssh-agent@v0.7.0
-        # with:
-        #   ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
       - name: Deploy to EC2
         run: |
           ssh ubuntu@52.66.208.45 'cd /var/www/html/assignment && git pull origin main'
