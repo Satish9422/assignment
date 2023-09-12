@@ -15,17 +15,17 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Set up SSH
-        # run: |
-        #   mkdir -p ~/.ssh
-        #   echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-        #   chmod 600 ~/.ssh/id_rsa
-        #   ssh-keyscan -t rsa 52.66.208.45 >> ~/.ssh/known_hosts
-        #   eval "$(ssh-agent -s)"
-        #   ssh-add ~/.ssh/id_rsa
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 400 ~/.ssh/id_rsa
+          ssh-keyscan -t rsa 52.66.208.45 >> ~/.ssh/known_hosts
+          eval "$(ssh-agent -s)"
+          ssh-add ~/.ssh/id_rsa
 
-        uses: webfactory/ssh-agent@v0.7.0
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+        # uses: webfactory/ssh-agent@v0.7.0
+        # with:
+        #   ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Deploy to EC2
         run: |
