@@ -29,4 +29,4 @@ jobs:
 
       - name: Deploy to EC2
         run: |
-          ssh ubuntu@52.66.208.45 'cd /var/www/html/wordpress && git pull origin main'
+          ssh ubuntu@52.66.208.45 'cd /var/www/html/assignment && git pull origin main'
