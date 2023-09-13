@@ -11,12 +11,7 @@ Step 2: Install nginx, php, mysql on VPS.
 
 Step 3: Configure php-fpm
 
-	nano /etc/php/8.1/fpm/php.ini	
-	cgi.fix_pathinfo=0
-	upload_max_filesize = 200M
-	post_max_size = 200M
-	memory_limit = 256M
-	max_execution_time = 120   
+	refer resources/php.ini  
 
 Step 4:	Configure Database	
 
@@ -41,21 +36,7 @@ Step 6:	Purchase domain from noip.com and add A record pointing to VPS public ip
 
 Step 7: Configure nginx virtual host 	
 
-	nano /etc/nginx/sites-enabled/wordpress.conf	
- 
-
-	server {
-       	root /var/www/html/wordpress;
-       	index index.html index.php;
-       	server_name assignment.zapto.org;
-       	location / {
-        try_files $uri $uri/ /index.php?$args;
-    	}
- 	location ~ \.php$ {
-               include snippets/fastcgi-php.conf;
-               fastcgi_pass unix:/run/php/php8.1-fpm.sock;
-          }
-	}
+	refer resources/wordpress.conf
 
 Step 8: Secure nginx with SSL certificates	
 
@@ -84,7 +65,7 @@ Step 3: Set Up GitHub Actions Workflow
  
 Step 4: Configure GitHub Actions Workflow	
 
-	Refer file deploy.yaml
+	Refer file resources/deploy.yaml
 
 Step 5: Add SSH key to github secrets 	
 
